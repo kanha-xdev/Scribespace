@@ -71,13 +71,13 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <Card className="w-full max-w-md glass-card border-0">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-charter font-bold text-dark-text">
+          <CardTitle className="text-2xl font-inter font-bold text-premium">
             Join Our Community
           </CardTitle>
-          <p className="text-gray-text">Create your account to start writing</p>
+          <p className="text-premium-secondary">Create your account to start writing</p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -88,7 +88,7 @@ export default function Register() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="focus-visible:ring-2 focus-visible:ring-medium-green"
+                className="glass focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted border-0"
                 data-testid="input-register-name"
               />
             </div>
@@ -99,7 +99,7 @@ export default function Register() {
                 value={formData.username}
                 onChange={handleChange}
                 required
-                className="focus-visible:ring-2 focus-visible:ring-medium-green"
+                className="glass focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted border-0"
                 data-testid="input-register-username"
               />
             </div>
@@ -111,7 +111,7 @@ export default function Register() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="focus-visible:ring-2 focus-visible:ring-medium-green"
+                className="glass focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted border-0"
                 data-testid="input-register-email"
               />
             </div>
@@ -123,7 +123,7 @@ export default function Register() {
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="focus-visible:ring-2 focus-visible:ring-medium-green"
+                className="glass focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted border-0"
                 data-testid="input-register-password"
               />
             </div>
@@ -135,7 +135,7 @@ export default function Register() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
-                className="focus-visible:ring-2 focus-visible:ring-medium-green"
+                className="glass focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted border-0"
                 data-testid="input-register-confirm-password"
               />
             </div>
@@ -145,13 +145,13 @@ export default function Register() {
                 placeholder="Bio (optional)"
                 value={formData.bio}
                 onChange={handleChange}
-                className="focus-visible:ring-2 focus-visible:ring-medium-green"
+                className="glass focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted border-0"
                 data-testid="input-register-bio"
               />
             </div>
             <Button 
               type="submit" 
-              className="w-full bg-medium-green hover:bg-green-700"
+              className="w-full btn-premium border-0"
               disabled={isLoading}
               data-testid="button-register-submit"
             >
@@ -160,9 +160,9 @@ export default function Register() {
           </form>
           
           <div className="mt-6 text-center">
-            <p className="text-gray-text">
+            <p className="text-premium-secondary">
               Already have an account?{" "}
-              <Link to="/login" className="text-medium-green hover:text-green-700 font-medium">
+              <Link to="/login" className="text-premium-purple hover:text-premium-purple-light font-medium">
                 Sign in
               </Link>
             </p>
@@ -172,19 +172,19 @@ export default function Register() {
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300"></div>
+                <div className="w-full border-t border-white/20"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                <span className="px-2 bg-premium-bg text-premium-muted">Or continue with</span>
               </div>
             </div>
             <div className="mt-6 grid grid-cols-2 gap-3">
-              <Button variant="outline" className="w-full" data-testid="button-google-auth">
-                <i className="fab fa-google text-red-500 mr-2"></i>
+              <Button variant="outline" className="w-full glass border-white/20 text-premium hover:bg-white/10" data-testid="button-google-auth">
+                <i className="fab fa-google text-red-400 mr-2"></i>
                 Google
               </Button>
-              <Button variant="outline" className="w-full" data-testid="button-github-auth">
-                <i className="fab fa-github text-gray-900 mr-2"></i>
+              <Button variant="outline" className="w-full glass border-white/20 text-premium hover:bg-white/10" data-testid="button-github-auth">
+                <i className="fab fa-github text-premium mr-2"></i>
                 GitHub
               </Button>
             </div>

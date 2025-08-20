@@ -52,7 +52,7 @@ export default function Home() {
           ) : heroBlog ? (
             <div className="lg:flex lg:items-center lg:space-x-12">
               <div className="lg:w-1/2">
-                <h1 className="text-4xl lg:text-6xl font-playfair font-bold text-premium leading-tight mb-6">
+                <h1 className="text-4xl lg:text-6xl font-inter font-bold text-premium leading-tight mb-6">
                   {heroBlog.title}
                 </h1>
                 <p className="text-xl text-premium-secondary mb-8 leading-relaxed">
@@ -89,7 +89,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <h1 className="text-5xl lg:text-7xl font-playfair font-bold text-gradient mb-6">
+              <h1 className="text-5xl lg:text-7xl font-inter font-bold text-gradient mb-6">
                 Welcome to Blogify
               </h1>
               <p className="text-2xl text-premium-purple mb-8">
@@ -178,7 +178,7 @@ export default function Home() {
                             {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                           </span>
                         </div>
-                        <h3 className="text-lg font-playfair font-semibold text-premium mb-2 group-hover:text-premium-purple transition-colors">
+                        <h3 className="text-lg font-charter font-semibold text-premium mb-2 group-hover:text-premium-purple transition-colors">
                           {blog.title}
                         </h3>
                         <p className="text-premium-secondary text-sm mb-3 line-clamp-2">

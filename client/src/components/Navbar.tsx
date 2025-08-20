@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold font-playfair text-gradient" data-testid="link-home">
+            <Link to="/" className="text-2xl font-bold font-inter text-gradient" data-testid="link-home">
               Blogify
             </Link>
           </div>

@@ -30,7 +30,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
             {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
           </span>
         </div>
-        <h3 className="text-xl font-playfair font-semibold text-premium mb-3 group-hover:text-premium-purple transition-colors duration-300">
+        <h3 className="text-xl font-charter font-semibold text-premium mb-3 group-hover:text-premium-purple transition-colors duration-300">
           {blog.title}
         </h3>
         <p className="text-premium-secondary text-base mb-6 line-clamp-3">

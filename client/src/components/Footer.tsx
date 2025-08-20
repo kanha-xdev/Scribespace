@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-2xl font-bold font-playfair text-gradient mb-4">Blogify</div>
+            <div className="text-2xl font-bold font-inter text-gradient mb-4">Blogify</div>
             <p className="text-premium-secondary mb-6">
               Write. Share. Inspire. A platform for sharing knowledge, stories, and ideas. Join our community of writers and readers.
             </p>
