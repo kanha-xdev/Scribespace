@@ -41,7 +41,7 @@
   --font-serif: 'Charter', Georgia, Times, Times New Roman, serif;
   --font-mono: Menlo, Monaco, Consolas, Courier New, monospace;
   --radius: 1rem;
-  
+
   /* Premium Brand Colors */
   --premium-purple: hsl(267, 84%, 81%);
   --premium-purple-light: hsl(267, 84%, 85%);
@@ -93,7 +93,7 @@
   --font-serif: Charter, Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: 0.5rem;
-  
+
   /* Medium-specific colors for dark mode */
   --medium-green: hsl(142, 70.5%, 45.3%);
   --medium-green-light: hsl(142, 70%, 7.8%);
@@ -137,15 +137,15 @@
   .font-charter {
     font-family: 'Charter', Georgia, Times, Times New Roman, serif;
   }
-  
+
   .font-inter {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
-  
+
   .font-mono {
     font-family: Menlo, Monaco, Consolas, Courier New, monospace;
   }
-  
+
   /* Optimized Glass Effects */
   .glass {
     background: rgba(255, 255, 255, 0.05);
@@ -154,7 +154,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
-  
+
   .glass-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
@@ -164,20 +164,20 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
   }
-  
+
   .glass-card:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(139, 92, 246, 0.2);
     transform: translateY(-2px);
   }
-  
+
   .glass-nav {
     background: rgba(17, 24, 39, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   /* Premium Button Styles */
   .btn-premium {
     background: linear-gradient(135deg, var(--premium-purple) 0%, var(--premium-purple-dark) 100%);
@@ -187,7 +187,7 @@
       inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .btn-premium:hover {
     background: linear-gradient(135deg, var(--premium-purple-light) 0%, var(--premium-purple) 100%);
     box-shadow: 
@@ -195,24 +195,24 @@
       inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
   }
-  
+
   /* Premium Text Colors */
   .text-premium {
     color: var(--premium-text);
   }
-  
+
   .text-premium-secondary {
     color: var(--premium-text-secondary);
   }
-  
+
   .text-premium-muted {
     color: var(--premium-text-muted);
   }
-  
+
   .text-premium-purple {
     color: var(--premium-purple);
   }
-  
+
   /* Gradient Text */
   .text-gradient {
     background: linear-gradient(135deg, var(--premium-purple) 0%, var(--premium-purple-light) 100%);
@@ -220,45 +220,45 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   /* Premium Animations */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
   }
-  
+
   .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
   }
-  
+
   @keyframes glow {
     from { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
     to { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
   }
-  
+
   /* Parallax */
   .parallax {
     transform-style: preserve-3d;
     perspective: 1000px;
   }
-  
+
   /* Curved Borders */
   .curved-lg {
     border-radius: 2rem;
   }
-  
+
   .curved-xl {
     border-radius: 3rem;
   }
-  
+
   .curved-2xl {
     border-radius: 4rem;
   }
-  
+
   /* Line Clamps */
   .line-clamp-2 {
     display: -webkit-box;
@@ -266,28 +266,28 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   /* Scrollbar Styling */
   ::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.05);
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: var(--premium-purple);
     border-radius: 3px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background: var(--premium-purple-light);
   }

@@ -128,7 +128,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <div className="flex items-center justify-center space-x-4 mb-6">
+              <div className="flex items-center justify-center space-x-4 mb-8">
                 <svg className="w-16 h-16 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
                 </svg>
@@ -139,22 +139,42 @@ export default function Home() {
                   <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                 </svg>
               </div>
-              <p className="text-2xl text-premium-purple mb-4">
-                ✨ Your Words Matter
-              </p>
-              <p className="text-lg text-premium-secondary mb-8">
-                Join our creative community
-              </p>
-              <div className="flex items-center justify-center space-x-4">
+              
+              {/* Platform Purpose */}
+              <div className="max-w-3xl mx-auto mb-12">
+                <p className="text-3xl font-charter text-premium mb-6 leading-relaxed">
+                  A place to read, write, and share ideas with creators worldwide.
+                </p>
+                <p className="text-xl text-premium-secondary mb-4 leading-relaxed">
+                  Join thousands of writers, thinkers, and storytellers who are sharing their knowledge, 
+                  experiences, and creativity on ScribeSpace.
+                </p>
+                <p className="text-lg text-premium-muted">
+                  Whether you're here to discover amazing content or share your own voice, 
+                  you're part of a community that values quality writing and meaningful conversations.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a 
                   href="/register"
-                  className="inline-flex items-center space-x-2 btn-premium px-8 py-4 rounded-full text-premium-bg font-medium"
-                  data-testid="button-join-community"
+                  className="inline-flex items-center space-x-2 btn-premium px-8 py-4 rounded-full text-premium-bg font-medium text-lg hover:scale-105 transition-all duration-300 shadow-lg"
+                  data-testid="button-start-writing"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                   </svg>
-                  <span>Join Community</span>
+                  <span>Start Writing</span>
+                </a>
+                <a 
+                  href="#featured"
+                  className="inline-flex items-center space-x-2 glass-card px-8 py-4 rounded-full text-premium font-medium text-lg hover:bg-white/10 transition-all duration-300"
+                  data-testid="button-explore-articles"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span>Explore Articles</span>
                 </a>
               </div>
             </div>
@@ -163,13 +183,18 @@ export default function Home() {
       </section>
 
       {/* Featured Articles Grid */}
-      <section className="py-16">
+      <section id="featured" className="py-16 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-3 mb-12">
-            <svg className="w-8 h-8 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
-            </svg>
-            <h2 className="text-3xl font-inter font-bold text-premium">Featured Articles</h2>
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <svg className="w-8 h-8 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+              </svg>
+              <h2 className="text-4xl font-inter font-bold text-premium">Featured Articles</h2>
+            </div>
+            <p className="text-lg text-premium-secondary">
+              Handpicked stories from our community
+            </p>
           </div>
           
           {isLoading ? (
@@ -199,17 +224,22 @@ export default function Home() {
       </section>
 
       {/* Recent Articles List */}
-      <section className="py-16">
+      <section className="py-16 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-12">
-            <div className="flex items-center space-x-3">
-              <svg className="w-7 h-7 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 12H7V10H17V12ZM13 16H7V14H13V16ZM17 8H7V6H17V8Z"/>
-              </svg>
-              <h2 className="text-3xl font-inter font-bold text-premium">Recent Articles</h2>
+          <div className="flex items-center justify-between mb-16">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <svg className="w-7 h-7 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 12H7V10H17V12ZM13 16H7V14H13V16ZM17 8H7V6H17V8Z"/>
+                </svg>
+                <h2 className="text-4xl font-inter font-bold text-premium">Latest Stories</h2>
+              </div>
+              <p className="text-lg text-premium-secondary">
+                Fresh perspectives from our community of writers
+              </p>
             </div>
-            <a href="#" className="text-premium-purple hover:text-premium-purple-light font-medium" data-testid="link-view-all">
-              View all
+            <a href="#" className="text-premium-purple hover:text-premium-purple-light font-medium transition-colors text-lg" data-testid="link-view-all">
+              View all →
             </a>
           </div>
           
@@ -230,46 +260,68 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid lg:grid-cols-2 gap-8">
-              {recentBlogs.map((blog) => (
-                <article key={blog.id} className="glass-card p-6 cursor-pointer group">
-                  <a href={`/blog/${blog.id}`} className="block">
-                    <div className="flex space-x-4">
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-3 mb-3">
+              {recentBlogs.map((blog, index) => (
+                <div key={blog.id}>
+                  <article className="glass-card p-6 cursor-pointer group hover:shadow-xl transition-all duration-300">
+                    <a href={`/blog/${blog.id}`} className="block">
+                      <div className="flex space-x-4">
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-3 mb-3">
+                            <img 
+                              src={blog.author.avatar || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=24&h=24&fit=crop&crop=face"} 
+                              alt={blog.author.name}
+                              className="w-6 h-6 rounded-full object-cover"
+                            />
+                            <span className="text-sm text-premium-secondary">{blog.author.name}</span>
+                            <span className="text-sm text-premium-muted">·</span>
+                            <span className="text-sm text-premium-secondary">
+                              {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                            </span>
+                          </div>
+                          <h3 className="text-xl font-charter font-semibold text-premium mb-2 group-hover:text-premium-purple transition-colors leading-tight">
+                            {blog.title}
+                          </h3>
+                          <p className="text-premium-secondary text-base mb-4 line-clamp-2 leading-relaxed">
+                            {blog.excerpt}
+                          </p>
+                          
+                          {/* Tags */}
+                          {blog.tags && blog.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-2 mb-4">
+                              {blog.tags.slice(0, 3).map((tag, tagIndex) => (
+                                <span 
+                                  key={tagIndex}
+                                  className="px-2 py-1 glass text-premium-secondary text-xs rounded-md hover:bg-white/10 transition-colors"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                          
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-premium-muted">{blog.readTime}</span>
+                            <button className="text-premium-muted hover:text-premium-purple transition-colors" data-testid={`button-bookmark-${blog.id}`}>
+                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        {blog.coverImage && (
                           <img 
-                            src={blog.author.avatar || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=24&h=24&fit=crop&crop=face"} 
-                            alt={blog.author.name}
-                            className="w-6 h-6 rounded-full object-cover"
+                            src={blog.coverImage} 
+                            alt={blog.title}
+                            className="w-24 h-20 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
                           />
-                          <span className="text-sm text-premium-secondary">{blog.author.name}</span>
-                          <span className="text-sm text-premium-muted">·</span>
-                          <span className="text-sm text-premium-secondary">
-                            {new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                          </span>
-                        </div>
-                        <h3 className="text-lg font-charter font-semibold text-premium mb-2 group-hover:text-premium-purple transition-colors">
-                          {blog.title}
-                        </h3>
-                        <p className="text-premium-secondary text-sm mb-3 line-clamp-2">
-                          {blog.excerpt}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-premium-muted">{blog.readTime}</span>
-                          <button className="text-premium-muted hover:text-premium-purple transition-colors" data-testid={`button-bookmark-${blog.id}`}>
-                            <i className="far fa-bookmark text-sm"></i>
-                          </button>
-                        </div>
+                        )}
                       </div>
-                      {blog.coverImage && (
-                        <img 
-                          src={blog.coverImage} 
-                          alt={blog.title}
-                          className="w-20 h-16 object-cover rounded flex-shrink-0"
-                        />
-                      )}
-                    </div>
-                  </a>
-                </article>
+                    </a>
+                  </article>
+                  {index < recentBlogs.length - 1 && (
+                    <div className="border-t border-white/5 my-6"></div>
+                  )}
+                </div>
               ))}
             </div>
           )}
