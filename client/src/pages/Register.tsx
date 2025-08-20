@@ -49,7 +49,6 @@ export default function Register() {
         name: formData.name,
         username: formData.username,
         email: formData.email,
-        password: formData.password,
         bio: formData.bio || undefined,
       });
 

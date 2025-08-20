@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,10 +22,11 @@ export default function CreateBlog() {
   const navigate = useNavigate();
 
   // Redirect if not logged in
-  if (!mockAuthState.isLoggedIn) {
-    navigate("/login");
-    return null;
-  }
+  React.useEffect(() => {
+    if (!mockAuthState.isLoggedIn) {
+      navigate("/login");
+    }
+  }, [navigate]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
