@@ -29,8 +29,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold font-inter text-gradient" data-testid="link-home">
-              Blogify
+            <Link to="/" className="flex items-center space-x-3 text-2xl font-bold font-inter text-gradient" data-testid="link-home">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 18V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <path d="M7 10h4m-4 4h8m-8-8h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              <span>ScribeSpace</span>
             </Link>
           </div>
           
@@ -120,7 +124,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/10">
+          <div className="md:hidden py-4 border-t border-white/5">
             <div className="space-y-4">
               {/* Mobile Search */}
               <form onSubmit={handleSearch} className="relative">
@@ -129,10 +133,10 @@ export default function Navbar() {
                   placeholder="Search articles..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-full focus-visible:ring-2 focus-visible:ring-medium-green"
+                  className="w-full pl-10 pr-4 py-2 glass border-0 rounded-full focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted"
                   data-testid="input-search-mobile"
                 />
-                <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-premium-muted w-4 h-4" />
               </form>
               
               {/* Mobile Navigation Links */}
@@ -141,7 +145,7 @@ export default function Navbar() {
                   <>
                     <Link 
                       to="/create" 
-                      className="flex items-center space-x-2 py-2 text-gray-600 hover:text-dark-text transition-colors"
+                      className="flex items-center space-x-2 py-2 text-premium-secondary hover:text-premium transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                       data-testid="link-write-mobile"
                     >
@@ -150,7 +154,7 @@ export default function Navbar() {
                     </Link>
                     <Link 
                       to="/profile" 
-                      className="flex items-center space-x-2 py-2 text-gray-600 hover:text-dark-text transition-colors"
+                      className="flex items-center space-x-2 py-2 text-premium-secondary hover:text-premium transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                       data-testid="link-profile-mobile"
                     >
@@ -177,7 +181,7 @@ export default function Navbar() {
                   <>
                     <Link 
                       to="/login" 
-                      className="block py-2 text-gray-600 hover:text-dark-text transition-colors"
+                      className="block py-2 text-premium-secondary hover:text-premium transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                       data-testid="link-sign-in-mobile"
                     >
@@ -185,7 +189,7 @@ export default function Navbar() {
                     </Link>
                     <Button 
                       asChild 
-                      className="w-full bg-medium-green text-white hover:bg-green-700 transition-colors rounded-full mt-4"
+                      className="w-full btn-premium transition-colors rounded-full mt-4"
                     >
                       <Link 
                         to="/register" 

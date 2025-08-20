@@ -54,7 +54,7 @@ export default function Register() {
       });
 
       toast({
-        title: "Welcome to Blogify!",
+        title: "Welcome to ScribeSpace!",
         description: "Your account has been created successfully.",
       });
       

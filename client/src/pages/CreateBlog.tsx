@@ -128,14 +128,15 @@ export default function CreateBlog() {
       <div className="flex items-center justify-between mb-8">
         <button 
           onClick={() => navigate(-1)}
-          className="inline-flex items-center text-gray-600 hover:text-dark-text transition-colors"
+          className="inline-flex items-center text-premium-secondary hover:text-premium transition-colors"
         >
           <ArrowLeftIcon className="w-4 h-4 mr-2" />
           Back
         </button>
         <div className="flex items-center space-x-4">
           <Button 
-            variant="ghost" 
+            variant="ghost"
+            className="text-premium-secondary hover:text-premium" 
             onClick={saveDraft}
             disabled={isSaving}
             data-testid="button-save-draft"
@@ -144,7 +145,8 @@ export default function CreateBlog() {
             {isSaving ? "Saving..." : "Save Draft"}
           </Button>
           <Button 
-            variant="ghost" 
+            variant="ghost"
+            className="text-premium-secondary hover:text-premium" 
             onClick={() => setIsPreview(!isPreview)}
             data-testid="button-toggle-preview"
           >
@@ -154,8 +156,8 @@ export default function CreateBlog() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-lg p-8">
-        <h1 className="text-3xl font-charter font-bold text-dark-text mb-8">Write Your Story</h1>
+      <div className="glass-card p-8">
+        <h1 className="text-3xl font-inter font-bold text-premium mb-8">📝 Write Your Story</h1>
         
         {!isPreview ? (
           <form onSubmit={handlePublish} className="space-y-6">
@@ -166,7 +168,7 @@ export default function CreateBlog() {
                 placeholder="Title"
                 value={formData.title}
                 onChange={handleChange}
-                className="text-3xl font-charter font-bold border-none outline-none shadow-none text-dark-text placeholder:text-gray-400 p-0 focus-visible:ring-0"
+                className="text-3xl font-charter font-bold border-none outline-none shadow-none text-premium placeholder:text-premium-muted p-0 focus-visible:ring-0 bg-transparent"
                 data-testid="input-article-title"
               />
             </div>
@@ -178,7 +180,7 @@ export default function CreateBlog() {
                 placeholder="Subtitle (optional)"
                 value={formData.subtitle}
                 onChange={handleChange}
-                className="text-xl border-none outline-none shadow-none text-gray-text placeholder:text-gray-400 p-0 focus-visible:ring-0"
+                className="text-xl border-none outline-none shadow-none text-premium-secondary placeholder:text-premium-muted p-0 focus-visible:ring-0 bg-transparent"
                 data-testid="input-article-subtitle"
               />
             </div>
@@ -190,7 +192,7 @@ export default function CreateBlog() {
                 placeholder="Cover image URL (optional)"
                 value={formData.coverImage}
                 onChange={handleChange}
-                className="border border-gray-200 focus-visible:ring-2 focus-visible:ring-medium-green"
+                className="glass border-0 focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted"
                 data-testid="input-cover-image"
               />
             </div>
@@ -202,7 +204,7 @@ export default function CreateBlog() {
                 placeholder="Tags (comma separated, optional)"
                 value={formData.tags}
                 onChange={handleChange}
-                className="border border-gray-200 focus-visible:ring-2 focus-visible:ring-medium-green"
+                className="glass border-0 focus-visible:ring-2 focus-visible:ring-primary text-premium placeholder:text-premium-muted"
                 data-testid="input-tags"
               />
             </div>
@@ -214,16 +216,16 @@ export default function CreateBlog() {
                 placeholder="Tell your story..."
                 value={formData.content}
                 onChange={handleChange}
-                className="min-h-96 text-lg border-gray-200 focus-visible:ring-2 focus-visible:ring-medium-green resize-none"
+                className="min-h-96 text-lg glass border-0 focus-visible:ring-2 focus-visible:ring-primary resize-none text-premium placeholder:text-premium-muted bg-transparent font-charter"
                 data-testid="textarea-content"
               />
             </div>
             
             {/* Action Buttons */}
-            <div className="flex items-center justify-end pt-6 border-t border-gray-200">
+            <div className="flex items-center justify-end pt-6 border-t border-white/10">
               <Button 
                 type="submit" 
-                className="bg-medium-green hover:bg-green-700"
+                className="btn-premium"
                 disabled={isPublishing}
                 data-testid="button-publish-article"
               >
@@ -234,9 +236,9 @@ export default function CreateBlog() {
         ) : (
           <div className="min-h-96">
             <div className="prose prose-lg max-w-none">
-              <h1 className="text-3xl font-charter font-bold">{formData.title || "Untitled"}</h1>
+              <h1 className="text-3xl font-charter font-bold text-premium">{formData.title || "Untitled"}</h1>
               {formData.subtitle && (
-                <p className="text-xl text-gray-600 mb-6">{formData.subtitle}</p>
+                <p className="text-xl text-premium-secondary mb-6">{formData.subtitle}</p>
               )}
               {formData.coverImage && (
                 <img 

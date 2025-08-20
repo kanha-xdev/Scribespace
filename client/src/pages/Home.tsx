@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import BlogCard from "@/components/BlogCard";
 import { Skeleton } from "@/components/ui/skeleton";
-import { getBlogsWithAuthors, getFeaturedBlogs, BlogWithAuthor } from "@/data/mockData";
+import { getBlogsWithAuthors, getFeaturedBlogs, BlogWithAuthor, mockAuthState } from "@/data/mockData";
 
 export default function Home() {
   const [featuredBlogs, setFeaturedBlogs] = useState<BlogWithAuthor[]>([]);
@@ -49,6 +49,45 @@ export default function Home() {
                 <Skeleton className="w-full h-80 rounded-xl" />
               </div>
             </div>
+          ) : mockAuthState.isLoggedIn ? (
+            <div className="text-center relative z-10">
+              <div className="flex items-center justify-center space-x-4 mb-8">
+                <svg className="w-12 h-12 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                </svg>
+                <h1 className="text-4xl lg:text-6xl font-inter font-bold text-premium">
+                  Welcome back, {mockAuthState.currentUser?.name?.split(' ')[0]}!
+                </h1>
+                <svg className="w-12 h-12 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 11H7l3-3 3 3h-2v8h-2v-8zm1-1V6h2v4h2l-3 3-3-3h2z"/>
+                </svg>
+              </div>
+              <p className="text-xl text-premium-secondary mb-8">
+                ✍️ Ready to share your next story?
+              </p>
+              <div className="flex items-center justify-center space-x-4">
+                <a 
+                  href="/create"
+                  className="inline-flex items-center space-x-2 btn-premium px-8 py-4 rounded-full text-premium-bg font-medium"
+                  data-testid="button-start-writing"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                  </svg>
+                  <span>Start Writing</span>
+                </a>
+                <a 
+                  href="/profile"
+                  className="inline-flex items-center space-x-2 glass-card px-6 py-4 rounded-full text-premium font-medium hover:bg-white/10 transition-colors"
+                  data-testid="button-view-drafts"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span>My Articles</span>
+                </a>
+              </div>
+            </div>
           ) : heroBlog ? (
             <div className="lg:flex lg:items-center lg:space-x-12">
               <div className="lg:w-1/2">
@@ -89,15 +128,35 @@ export default function Home() {
             </div>
           ) : (
             <div className="text-center py-16">
-              <h1 className="text-5xl lg:text-7xl font-inter font-bold text-gradient mb-6">
-                Welcome to Blogify
-              </h1>
-              <p className="text-2xl text-premium-purple mb-8">
-                Write. Share. Inspire.
+              <div className="flex items-center justify-center space-x-4 mb-6">
+                <svg className="w-16 h-16 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                </svg>
+                <h1 className="text-5xl lg:text-7xl font-inter font-bold text-gradient">
+                  ScribeSpace
+                </h1>
+                <svg className="w-16 h-16 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                </svg>
+              </div>
+              <p className="text-2xl text-premium-purple mb-4">
+                ✨ Your Words Matter
               </p>
-              <p className="text-lg text-premium-secondary">
-                Discover and share amazing stories from our community of writers
+              <p className="text-lg text-premium-secondary mb-8">
+                Join our creative community
               </p>
+              <div className="flex items-center justify-center space-x-4">
+                <a 
+                  href="/register"
+                  className="inline-flex items-center space-x-2 btn-premium px-8 py-4 rounded-full text-premium-bg font-medium"
+                  data-testid="button-join-community"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                  </svg>
+                  <span>Join Community</span>
+                </a>
+              </div>
             </div>
           )}
         </div>
@@ -106,7 +165,12 @@ export default function Home() {
       {/* Featured Articles Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-playfair font-bold text-premium mb-12">Featured Articles</h2>
+          <div className="flex items-center space-x-3 mb-12">
+            <svg className="w-8 h-8 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+            </svg>
+            <h2 className="text-3xl font-inter font-bold text-premium">Featured Articles</h2>
+          </div>
           
           {isLoading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -138,7 +202,12 @@ export default function Home() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl font-playfair font-bold text-premium">Recent Articles</h2>
+            <div className="flex items-center space-x-3">
+              <svg className="w-7 h-7 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 12H7V10H17V12ZM13 16H7V14H13V16ZM17 8H7V6H17V8Z"/>
+              </svg>
+              <h2 className="text-3xl font-inter font-bold text-premium">Recent Articles</h2>
+            </div>
             <a href="#" className="text-premium-purple hover:text-premium-purple-light font-medium" data-testid="link-view-all">
               View all
             </a>
