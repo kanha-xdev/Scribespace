@@ -24,12 +24,12 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Platform Purpose Section - Always visible */}
-      <section className="py-12 border-b border-white/10">
+      <section className="py-20 border-b border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-premium mb-4 leading-relaxed">
+          <p className="text-xl sm:text-2xl text-premium mb-6 leading-relaxed font-medium">
             A place to read, write, and share ideas with creators worldwide.
           </p>
-          <p className="text-premium-secondary">
+          <p className="text-lg text-premium-secondary">
             Join thousands of writers, thinkers, and storytellers sharing their knowledge and creativity.
           </p>
         </div>

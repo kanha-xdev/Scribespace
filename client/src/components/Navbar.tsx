@@ -23,10 +23,10 @@ export default function Navbar() {
 
             {/* Right side */}
             {mockAuthState.isLoggedIn ? (
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2 sm:space-x-4">
                 <Button 
                   variant="ghost"
-                  className="text-premium-secondary hover:text-premium transition-colors"
+                  className="text-premium-secondary hover:text-premium transition-colors p-2"
                   onClick={() => setIsSearchOpen(true)}
                   data-testid="button-search"
                 >
@@ -37,13 +37,24 @@ export default function Navbar() {
                 <Button 
                   asChild 
                   variant="ghost"
-                  className="text-premium-secondary hover:text-premium transition-colors"
+                  className="text-premium-secondary hover:text-premium transition-colors hidden sm:flex"
                 >
                   <Link to="/create" data-testid="link-create">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                     </svg>
                     Write
+                  </Link>
+                </Button>
+                <Button 
+                  asChild 
+                  variant="ghost"
+                  className="text-premium-secondary hover:text-premium transition-colors sm:hidden p-2"
+                >
+                  <Link to="/create" data-testid="link-create-mobile">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
                   </Link>
                 </Button>
                 <div className="w-8 h-8 bg-premium-purple rounded-full flex items-center justify-center">
@@ -53,11 +64,11 @@ export default function Navbar() {
                 </div>
               </div>
             ) : (
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2 sm:space-x-4">
                 <Button 
                   asChild 
                   variant="ghost"
-                  className="text-premium-secondary hover:text-premium transition-colors"
+                  className="text-premium-secondary hover:text-premium transition-colors hidden sm:flex"
                 >
                   <Link to="/login" data-testid="link-sign-in">
                     Sign In
@@ -65,7 +76,7 @@ export default function Navbar() {
                 </Button>
                 <Button 
                   asChild 
-                  className="btn-premium rounded-full px-6 text-premium-bg"
+                  className="btn-premium rounded-full px-3 sm:px-6 text-premium-bg text-sm sm:text-base"
                 >
                   <Link to="/register" data-testid="link-get-started">
                     Get started
