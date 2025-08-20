@@ -22,7 +22,7 @@ export default function CreateBlog() {
   const navigate = useNavigate();
 
   // Redirect if not logged in
-  React.useEffect(() => {
+  useEffect(() => {
     if (!mockAuthState.isLoggedIn) {
       navigate("/login");
     }

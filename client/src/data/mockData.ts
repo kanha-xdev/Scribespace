@@ -429,17 +429,35 @@ export const searchBlogs = (query: string): BlogWithAuthor[] => {
   );
 };
 
-// Auth state management (simple mock)
-export const mockAuthState = {
-  isLoggedIn: false,
-  currentUser: null as User | null,
+// Auth state management (simple mock with localStorage persistence)
+const getStoredAuthState = () => {
+  try {
+    const stored = localStorage.getItem('mockAuthState');
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      return {
+        isLoggedIn: parsed.isLoggedIn || false,
+        currentUser: parsed.currentUser || null,
+      };
+    }
+  } catch (error) {
+    console.warn('Failed to parse stored auth state');
+  }
+  return {
+    isLoggedIn: false,
+    currentUser: null as User | null,
+  };
 };
+
+export const mockAuthState = getStoredAuthState();
 
 export const loginUser = (email: string, password: string): User | null => {
   const user = mockUsers.find(u => u.email === email);
   if (user) {
     mockAuthState.isLoggedIn = true;
     mockAuthState.currentUser = user;
+    // Persist to localStorage
+    localStorage.setItem('mockAuthState', JSON.stringify(mockAuthState));
     return user;
   }
   return null;
@@ -448,6 +466,8 @@ export const loginUser = (email: string, password: string): User | null => {
 export const logoutUser = (): void => {
   mockAuthState.isLoggedIn = false;
   mockAuthState.currentUser = null;
+  // Clear from localStorage
+  localStorage.removeItem('mockAuthState');
 };
 
 export const registerUser = (userData: Omit<User, 'id' | 'createdAt'>): User => {
