@@ -26,12 +26,6 @@ export default function Home() {
       {/* Platform Purpose Section - Always visible */}
       <section className="py-12 border-b border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <svg className="w-8 h-8 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-            </svg>
-            <h2 className="text-2xl font-inter font-bold text-premium">ScribeSpace</h2>
-          </div>
           <p className="text-lg text-premium mb-4 leading-relaxed">
             A place to read, write, and share ideas with creators worldwide.
           </p>

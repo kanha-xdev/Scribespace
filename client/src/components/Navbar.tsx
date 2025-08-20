@@ -10,12 +10,15 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-[#F7F4ED] border-b border-black/10 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6">
+      <nav className="glass-nav backdrop-blur-sm sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-              <h1 className="text-2xl font-['GT_Super'] font-normal text-black">ScribeSpace</h1>
+            <Link to="/" className="flex items-center space-x-3">
+              <svg className="w-8 h-8 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+              </svg>
+              <h1 className="text-2xl font-inter font-bold text-premium">ScribeSpace</h1>
             </Link>
 
             {/* Right side */}
@@ -23,7 +26,7 @@ export default function Navbar() {
               <div className="flex items-center space-x-4">
                 <Button 
                   variant="ghost"
-                  className="text-gray-600 hover:text-black transition-colors"
+                  className="text-premium-secondary hover:text-premium transition-colors"
                   onClick={() => setIsSearchOpen(true)}
                   data-testid="button-search"
                 >
@@ -34,7 +37,7 @@ export default function Navbar() {
                 <Button 
                   asChild 
                   variant="ghost"
-                  className="text-gray-600 hover:text-black transition-colors"
+                  className="text-premium-secondary hover:text-premium transition-colors"
                 >
                   <Link to="/create" data-testid="link-create">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,8 +46,8 @@ export default function Navbar() {
                     Write
                   </Link>
                 </Button>
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-medium">
+                <div className="w-8 h-8 bg-premium-purple rounded-full flex items-center justify-center">
+                  <span className="text-premium-bg text-sm font-medium">
                     {mockAuthState.currentUser?.name?.charAt(0) || 'U'}
                   </span>
                 </div>
@@ -54,7 +57,7 @@ export default function Navbar() {
                 <Button 
                   asChild 
                   variant="ghost"
-                  className="text-gray-600 hover:text-black transition-colors"
+                  className="text-premium-secondary hover:text-premium transition-colors"
                 >
                   <Link to="/login" data-testid="link-sign-in">
                     Sign In
@@ -62,7 +65,7 @@ export default function Navbar() {
                 </Button>
                 <Button 
                   asChild 
-                  className="bg-black text-white hover:bg-gray-800 rounded-full px-6"
+                  className="btn-premium rounded-full px-6 text-premium-bg"
                 >
                   <Link to="/register" data-testid="link-get-started">
                     Get started
