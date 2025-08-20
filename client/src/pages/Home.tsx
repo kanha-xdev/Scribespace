@@ -23,6 +23,24 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      {/* Platform Purpose Section - Always visible */}
+      <section className="py-12 border-b border-white/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <svg className="w-8 h-8 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+            </svg>
+            <h2 className="text-2xl font-inter font-bold text-premium">ScribeSpace</h2>
+          </div>
+          <p className="text-lg text-premium mb-4 leading-relaxed">
+            A place to read, write, and share ideas with creators worldwide.
+          </p>
+          <p className="text-premium-secondary">
+            Join thousands of writers, thinkers, and storytellers sharing their knowledge and creativity.
+          </p>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 parallax">
@@ -133,25 +151,16 @@ export default function Home() {
                   <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
                 </svg>
                 <h1 className="text-5xl lg:text-7xl font-inter font-bold text-gradient">
-                  ScribeSpace
+                  Discover Amazing Stories
                 </h1>
                 <svg className="w-16 h-16 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                 </svg>
               </div>
               
-              {/* Platform Purpose */}
               <div className="max-w-3xl mx-auto mb-12">
-                <p className="text-3xl font-charter text-premium mb-6 leading-relaxed">
-                  A place to read, write, and share ideas with creators worldwide.
-                </p>
-                <p className="text-xl text-premium-secondary mb-4 leading-relaxed">
-                  Join thousands of writers, thinkers, and storytellers who are sharing their knowledge, 
-                  experiences, and creativity on ScribeSpace.
-                </p>
-                <p className="text-lg text-premium-muted">
-                  Whether you're here to discover amazing content or share your own voice, 
-                  you're part of a community that values quality writing and meaningful conversations.
+                <p className="text-xl text-premium-secondary mb-8 leading-relaxed">
+                  Explore featured content from our community of writers and creators.
                 </p>
               </div>
 
