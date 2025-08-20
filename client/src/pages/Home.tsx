@@ -24,17 +24,20 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Platform Purpose Section - Always visible */}
-      <section className="bg-[#F7F4ED] py-20 border-b border-black/10">
+      <section className="py-12 border-b border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-6xl md:text-7xl font-['GT_Super'] font-normal text-black mb-6 leading-tight">
-            Human stories<br />& ideas
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-md mx-auto leading-relaxed">
-            A place to read, write, and deepen your understanding
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <svg className="w-8 h-8 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+            </svg>
+            <h2 className="text-2xl font-inter font-bold text-premium">ScribeSpace</h2>
+          </div>
+          <p className="text-lg text-premium mb-4 leading-relaxed">
+            A place to read, write, and share ideas with creators worldwide.
           </p>
-          <button className="bg-black text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors">
-            Start reading
-          </button>
+          <p className="text-premium-secondary">
+            Join thousands of writers, thinkers, and storytellers sharing their knowledge and creativity.
+          </p>
         </div>
       </section>
 
@@ -196,10 +199,13 @@ export default function Home() {
               <svg className="w-8 h-8 text-premium-purple" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
               </svg>
-              <h2 className="text-4xl font-inter font-bold text-premium">Featured Articles</h2>
+              <h2 className="text-4xl font-inter font-bold text-premium">Featured Stories</h2>
             </div>
             <p className="text-lg text-premium-secondary">
-              Handpicked stories from our community
+              Discover the most compelling stories from our community of writers
+            </p>
+            <p className="text-premium-muted mt-2">
+              Handpicked by our editorial team for quality and engagement
             </p>
           </div>
           
@@ -240,8 +246,11 @@ export default function Home() {
                 </svg>
                 <h2 className="text-4xl font-inter font-bold text-premium">Latest Stories</h2>
               </div>
-              <p className="text-lg text-premium-secondary">
+              <p className="text-lg text-premium-secondary mb-2">
                 Fresh perspectives from our community of writers
+              </p>
+              <p className="text-premium-muted">
+                Stay up to date with the newest articles, insights, and stories published daily
               </p>
             </div>
             <a href="#" className="text-premium-purple hover:text-premium-purple-light font-medium transition-colors text-lg" data-testid="link-view-all">
