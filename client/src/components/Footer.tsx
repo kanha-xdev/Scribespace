@@ -20,40 +20,40 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-dark-text text-white py-16">
+    <footer className="glass border-t border-white/10 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-2xl font-bold mb-4">Blogify</div>
-            <p className="text-gray-300 mb-6">
+            <div className="text-2xl font-bold font-playfair text-gradient mb-4">Blogify</div>
+            <p className="text-premium-secondary mb-6">
               Write. Share. Inspire. A platform for sharing knowledge, stories, and ideas. Join our community of writers and readers.
             </p>
             <div className="flex space-x-4">
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-premium-muted hover:text-premium-purple transition-colors"
                 data-testid="link-twitter"
               >
                 <i className="fab fa-twitter"></i>
               </a>
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-premium-muted hover:text-premium-purple transition-colors"
                 data-testid="link-facebook"
               >
                 <i className="fab fa-facebook"></i>
               </a>
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-premium-muted hover:text-premium-purple transition-colors"
                 data-testid="link-linkedin"
               >
                 <i className="fab fa-linkedin"></i>
               </a>
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-premium-muted hover:text-premium-purple transition-colors"
                 data-testid="link-github"
               >
                 <i className="fab fa-github"></i>
@@ -63,7 +63,7 @@ export default function Footer() {
           
           {/* Platform Links */}
           <div>
-            <h4 className="font-semibold mb-4">Platform</h4>
+            <h4 className="font-semibold mb-4 text-premium">Platform</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/create" className="text-gray-400 hover:text-white transition-colors" data-testid="link-footer-write">
@@ -90,7 +90,7 @@ export default function Footer() {
           
           {/* Support Links */}
           <div>
-            <h4 className="font-semibold mb-4">Support</h4>
+            <h4 className="font-semibold mb-4 text-premium">Support</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors" data-testid="link-footer-help">

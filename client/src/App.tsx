@@ -29,9 +29,9 @@ function App() {
   return (
     <Router>
       <TooltipProvider>
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen relative overflow-x-hidden">
           <Navbar />
-          <main>
+          <main className="relative z-10">
             <AppRoutes />
           </main>
           <Footer />

@@ -24,12 +24,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <header className="sticky top-0 glass-nav z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-dark-text" data-testid="link-home">
+            <Link to="/" className="text-2xl font-bold font-playfair text-gradient" data-testid="link-home">
               Blogify
             </Link>
           </div>
@@ -42,10 +42,10 @@ export default function Navbar() {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-full focus-visible:ring-2 focus-visible:ring-medium-green focus-visible:border-transparent"
+                className="w-full pl-10 pr-4 py-2 glass curved-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent text-premium placeholder:text-premium-muted"
                 data-testid="input-search"
               />
-              <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-premium-muted w-4 h-4" />
             </form>
           </div>
           
@@ -56,7 +56,7 @@ export default function Navbar() {
               <>
                 <Link 
                   to="/create" 
-                  className={`flex items-center space-x-2 text-gray-600 hover:text-dark-text transition-colors ${location.pathname === '/create' ? 'text-dark-text font-medium' : ''}`}
+                  className={`flex items-center space-x-2 text-premium-secondary hover:text-premium transition-colors ${location.pathname === '/create' ? 'text-premium font-medium' : ''}`}
                   data-testid="link-write"
                 >
                   <PenIcon className="w-4 h-4" />
@@ -64,7 +64,7 @@ export default function Navbar() {
                 </Link>
                 <Link 
                   to="/profile" 
-                  className="flex items-center space-x-2 text-gray-600 hover:text-dark-text transition-colors"
+                  className="flex items-center space-x-2 text-premium-secondary hover:text-premium transition-colors"
                   data-testid="link-profile"
                 >
                   <img 
@@ -77,6 +77,7 @@ export default function Navbar() {
                 <Button 
                   variant="ghost"
                   onClick={handleLogout}
+                  className="text-premium-secondary hover:text-premium"
                   data-testid="button-logout"
                 >
                   Logout
@@ -87,14 +88,14 @@ export default function Navbar() {
               <>
                 <Link 
                   to="/login" 
-                  className="text-gray-600 hover:text-dark-text transition-colors"
+                  className="text-premium-secondary hover:text-premium transition-colors"
                   data-testid="link-sign-in"
                 >
                   Sign In
                 </Link>
                 <Button 
                   asChild 
-                  className="bg-medium-green text-white hover:bg-green-700 transition-colors rounded-full"
+                  className="btn-premium text-premium-bg rounded-full"
                 >
                   <Link to="/register" data-testid="button-get-started">
                     Get started
@@ -119,7 +120,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-white/10">
             <div className="space-y-4">
               {/* Mobile Search */}
               <form onSubmit={handleSearch} className="relative">
