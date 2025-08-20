@@ -182,12 +182,12 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
-              <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="flex items-center space-x-1 sm:space-x-4">
                 <Button 
                   asChild 
                   variant="ghost"
                   size="sm"
-                  className="text-premium-secondary hover:text-premium hover:bg-white/10 transition-colors rounded-full px-3 sm:px-4 text-sm"
+                  className="text-premium-secondary hover:text-premium hover:bg-white/10 transition-colors rounded-full px-2 sm:px-4 text-xs sm:text-sm"
                 >
                   <Link 
                     to="/login" 
@@ -199,7 +199,7 @@ export default function Navbar() {
                 <Button 
                   asChild 
                   size="sm"
-                  className="btn-premium rounded-full px-4 sm:px-6 text-sm"
+                  className="btn-premium rounded-full px-3 sm:px-6 text-xs sm:text-sm whitespace-nowrap"
                 >
                   <Link to="/register" data-testid="button-get-started">
                     Get started
